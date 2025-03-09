@@ -3,6 +3,7 @@ const modalCloseBtn = document.getElementById('modal-close-btn')
 const consentForm = document.getElementById('consent-form')
 const modalText = document.getElementById('modal-text')
 const declineBtn = document.getElementById('decline-btn')
+const modalChoiceBtns = document.getElementById('modal-choice-btns')
 
 setTimeout(function(){
     modal.style.display = 'inline'
@@ -12,21 +13,9 @@ modalCloseBtn.addEventListener('click', function(){
     modal.style.display = 'none'
 }) 
 
-/*   
-Challenge: 
-1. Take control of the decline btn. (What do you
-   need to do to make that possible?)
-2. Set up an eventListener that is triggered 
-   when a user's cursor hovers over the decline 
-   button. (Google the event to listen out for!)
-3. For now, just log out "hovered" when that 
-   happens. 
-*/ 
-
 declineBtn.addEventListener('mouseenter', function(){
-    console.log('hovered')
-})
-
+    modalChoiceBtns.classList.toggle('modal-btns-reverse')
+}) 
 
 consentForm.addEventListener('submit', function(e){
     e.preventDefault()
